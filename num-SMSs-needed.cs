@@ -209,6 +209,7 @@ namespace Program
 
                 if (cnt + ooLinkLen > m)
                 {
+                  // opt-out can be longer than one msg
                   numSMSs += (cnt + ooLinkLen) / m;
                 }
 
