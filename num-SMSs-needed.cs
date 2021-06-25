@@ -135,7 +135,7 @@ namespace Program
             msg = sb.ToString();
 
 
-            // number of chars (code points) of current character
+            // length of GSM7 character (1 or 2 * 7-bit code points)
             Func<char, int> LenOfGSM7Char =
                 c => "\u000C^{}\\[~]|€".Contains(c) ? 2 : 1;
 
