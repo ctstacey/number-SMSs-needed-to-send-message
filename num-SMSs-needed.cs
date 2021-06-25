@@ -36,17 +36,17 @@ namespace Program
 
 
         const string GSM7_Half2 =
-		      "èéùìò\u000AØø\u000DΔ_ΦΓΛΩΠΨΣΘΞ\u001BßÉ¡ÖÑÜ§¿öñüà\u000C^{}\\[~]|€";
+            "èéùìò\u000AØø\u000DΔ_ΦΓΛΩΠΨΣΘΞ\u001BßÉ¡ÖÑÜ§¿öñüà\u000C^{}\\[~]|€";
 
         static private bool NotInGSM7_Half2 (char c)
         {
-          return ! SMSInfo.GSM7_Half2.Contains(c);
+            return ! SMSInfo.GSM7_Half2.Contains(c);
         }
 
         static private bool IsHighSurrogate (char c)
         {
-          // docs.microsoft.com/en-us/dotnet/api/system.char.ishighsurrogate
-          return c >= 0XD800 && c <= 0XDBFF;
+            // docs.microsoft.com/en-us/dotnet/api/system.char.ishighsurrogate
+            return c >= 0XD800 && c <= 0XDBFF;
         }
 
         static private bool IsInGSM7_Half1 (char c)
@@ -63,16 +63,16 @@ namespace Program
         // Are there any non GSM-7 characters in this string?
         static private bool AreNonGSM7CharsUsed (string s)
         {
-          foreach (char c in s)
-          {
-            if (SMSInfo.IsInGSM7_Half1(c))
-              continue;
+            foreach (char c in s)
+            {
+                if (SMSInfo.IsInGSM7_Half1(c))
+                    continue;
 
-            if (SMSInfo.IsHighSurrogate(c) || SMSInfo.NotInGSM7_Half2(c))
-              return true;
-          }
+                if (SMSInfo.IsHighSurrogate(c) || SMSInfo.NotInGSM7_Half2(c))
+                    return true;
+            }
 
-          return false;
+            return false;
         }
 
 
@@ -137,7 +137,7 @@ namespace Program
 
             // number of chars (code points) of current character
             Func<char, int> LenOfGSM7Char =
-              c => "\u000C^{}\\[~]|€".Contains(c) ? 2 : 1;
+                c => "\u000C^{}\\[~]|€".Contains(c) ? 2 : 1;
 
 
             if (SMSInfo.AreNonGSM7CharsUsed(msg))
@@ -209,8 +209,8 @@ namespace Program
 
                 if (cnt + ooLinkLen > m)
                 {
-                  // opt-out can be longer than one msg
-                  numSMSs += (cnt + ooLinkLen) / m;
+                    // opt-out can be longer than one msg
+                    numSMSs += (cnt + ooLinkLen) / m;
                 }
 
             }
