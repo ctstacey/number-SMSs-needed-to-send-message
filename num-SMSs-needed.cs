@@ -46,7 +46,7 @@ namespace Program
         static private bool IsHighSurrogate (char c)
         {
             // docs.microsoft.com/en-us/dotnet/api/system.char.ishighsurrogate
-            return c >= 0XD800 && c <= 0XDBFF;
+            return c >= 0xD800 && c <= 0xDBFF;
         }
 
         static private bool IsInGSM7_Half1 (char c)
