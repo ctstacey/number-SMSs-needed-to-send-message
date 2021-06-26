@@ -1,4 +1,6 @@
 /*----------------------------------------------------------------------------*\
+  c stacey, Jun 2021
+
   LIMITED TO .NET 4.7.2 DUE TO BUILD CHAIN LIMITATIONS
   - Would use local functions, but limited to delegates instead.
 \*----------------------------------------------------------------------------*/
